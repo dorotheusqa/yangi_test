@@ -2,6 +2,7 @@ import allure
 from pytest import mark
 from uuid import uuid4
 from data.enum_data import WrongData
+
 pytestmark = [allure.parent_suite("Тест создания и получения строки"),
               allure.suite("Получение строки"),
               allure.link("https://yangi.uz/#business"),
@@ -26,7 +27,6 @@ def test_get_non_exist_string(get_string_api):
 
 
 @allure.title("Запрос с параметром string_id отличным от UUID")
-@mark.smoke
 @mark.parametrize("string_id", WrongData.list())
 def test_get_non_exist_string(get_string_api, string_id):
     get_string_api.get_string(string_id)
