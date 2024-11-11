@@ -1,6 +1,7 @@
 import allure
 from pytest import mark
 from data.enum_data import WrongData, WrongMethod
+
 pytestmark = [allure.parent_suite("Тест создания и получения строки"),
               allure.suite("Создание строки"),
               allure.link("https://yangi.uz/#business"),
